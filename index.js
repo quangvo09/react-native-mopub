@@ -1,6 +1,6 @@
-
-import { NativeModules } from 'react-native';
-
-const { RNMopub } = NativeModules;
-
-export default RNMopub;
+/* eslint-disable global-require */
+module.exports = {
+  get MoPubRewarded() {
+    return require('./RNMoPubRewarded').default;
+  }
+};
