@@ -11,4 +11,4 @@
 @interface RNMoPubRewarded : RCTEventEmitter <RCTBridgeModule, MPRewardedVideoDelegate>
 
 @end
-  
+
