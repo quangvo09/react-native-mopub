@@ -80,7 +80,7 @@ public class RNMoPubRewardedVideoAdModule extends ReactContextBaseJavaModule imp
             @Override
             public void run() {
                 if (MoPubRewardedVideos.hasRewardedVideo(adUnitID)) {
-                    MoPubRewardedVideos.showRewardedVideo(adUnitID, customData);
+                    MoPubRewardedVideos.showRewardedVideo(adUnitID);
                     promise.resolve(null);
                 } else {
                     promise.reject("E_AD_NOT_READY", "Ad is not ready.");
@@ -151,7 +151,7 @@ public class RNMoPubRewardedVideoAdModule extends ReactContextBaseJavaModule imp
     @Override
     public void onRewardedVideoCompleted(@NonNull final Set<String> adUnitIds,
             @NonNull final MoPubReward reward) {
-        if (adUnitId.contains(adUnitID)) {
+        if (adUnitIds.contains(adUnitID)) {
           WritableMap reward = Arguments.createMap();
           sendEvent(EVENT_REWARDED, reward);
         }
