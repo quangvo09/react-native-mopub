@@ -32,5 +32,16 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
+    implementation('com.mopub:mopub-sdk:5.4.1@aar') {
+        transitive = true
+    }
+    // For interstitials
+    implementation('com.mopub:mopub-sdk-interstitial:5.4.1@aar') {
+        transitive = true
+    }
+    // For rewarded videos. This will automatically also include interstitials
+    implementation('com.mopub:mopub-sdk-rewardedvideo:5.4.1@aar') {
+        transitive = true
+    }
 }
   
