@@ -3,6 +3,7 @@ package com.smartapp.rnmopub;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.Nullable;
+import android.support.annotation.NonNull;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
@@ -23,6 +24,7 @@ import com.mopub.mobileads.MoPubRewardedVideoListener;
 import com.mopub.mobileads.MoPubRewardedVideos;
 
 import java.util.Map;
+import java.util.Set;
 
 public class RNMoPubRewardedVideoAdModule extends ReactContextBaseJavaModule implements MoPubRewardedVideoListener {
 
@@ -152,8 +154,8 @@ public class RNMoPubRewardedVideoAdModule extends ReactContextBaseJavaModule imp
     public void onRewardedVideoCompleted(@NonNull final Set<String> adUnitIds,
             @NonNull final MoPubReward reward) {
         if (adUnitIds.contains(adUnitID)) {
-          WritableMap reward = Arguments.createMap();
-          sendEvent(EVENT_REWARDED, reward);
+          WritableMap rewardItem = Arguments.createMap();
+          sendEvent(EVENT_REWARDED, rewardItem);
         }
     }
 }
