@@ -149,9 +149,9 @@ public class RNMoPubRewardedVideoAdModule extends ReactContextBaseJavaModule imp
     }
 
     @Override
-    public void   (@NonNull final Set<String> adUnitIds,
+    public void onRewardedVideoCompleted(@NonNull final Set<String> adUnitIds,
             @NonNull final MoPubReward reward) {
-        if (adUnitIds.contains(adUnitID)) {
+        if (adUnitId.contains(adUnitID)) {
           WritableMap reward = Arguments.createMap();
           sendEvent(EVENT_REWARDED, reward);
         }
