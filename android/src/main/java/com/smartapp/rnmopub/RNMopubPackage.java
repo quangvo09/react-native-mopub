@@ -13,7 +13,10 @@ import com.facebook.react.bridge.JavaScriptModule;
 public class RNMopubPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-      return Arrays.<NativeModule>asList(new RNMopubModule(reactContext));
+      return Arrays.<NativeModule>asList(
+        new RNMopubModule(reactContext),
+        new RNMoPubRewardedVideoAdModule(reactContext)
+      );
     }
 
     // Deprecated from RN 0.47
